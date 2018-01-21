@@ -1,2 +1,2 @@
-<q><%= @author %></q>
-<p><%= @quote %></p>
+<h1 class="alert-info quote"><%= @quote %></h1>
+<i class="float-right text-info">-<%= @author %></i>
