@@ -18,6 +18,7 @@ defmodule ElixirqotdWeb.Router do
 
     get "/", PageController, :index
     get "/quote", QuoteController, :index
+    get "/quote/view", QuoteController, :show
   end
 
   # Other scopes may use custom stacks.
