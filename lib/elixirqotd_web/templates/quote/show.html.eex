@@ -1,2 +1,18 @@
-<h1 class="alert-info quote"><%= @quote %></h1>
-<i class="float-right text-info">-<%= @author %></i>
+<h2>Show Quote</h2>
+
+<ul>
+
+  <li>
+    <strong>Author:</strong>
+    <%= @quote.author %>
+  </li>
+
+  <li>
+    <strong>Content:</strong>
+    <%= @quote.content %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: quote_path(@conn, :edit, @quote) %></span>
+<span><%= link "Back", to: quote_path(@conn, :index) %></span>

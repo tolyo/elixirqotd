@@ -17,8 +17,9 @@ defmodule ElixirqotdWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/quote", QuoteController, :index
-    get "/quote/view", QuoteController, :show
+    get "/quote", QuoteController, :static
+    get "/quote/view", QuoteController, :staticview
+    resources "/quotes", QuoteController
   end
 
   # Other scopes may use custom stacks.
