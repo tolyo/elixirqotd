@@ -1,0 +1,2 @@
+<h1 class="alert-info quote"> <%= @quote.content %></h1>
+<i class="float-right text-info">- <%= @quote.author %></i>

@@ -1,2 +1,12 @@
-<h1 class="alert-info quote"> <%= @quote.content %></h1>
-<i class="float-right text-info">- <%= @quote.author %></i>
+<button onclick='app.getBlock("randomajax", "quote-block")'
+        class="btn ali btn-lg btn-secondary">
+    Get new quote
+</button>
+
+<br>
+<br>
+
+<div id="quote-block">
+    <h1 class="alert-info quote"> <%= @quote.content %></h1>
+    <i class="float-right text-info">- <%= @quote.author %></i>
+</div>

@@ -18,7 +18,9 @@ defmodule ElixirqotdWeb.Router do
 
     get "/", PageController, :index
     get "/quote", QuoteController, :static
-    get "/quote/view", QuoteController, :staticview
+    get "/quote/static", QuoteController, :staticview
+    get "/quote/random", QuoteController, :random
+    get "/quote/randomajax", QuoteController, :randomAjax
     resources "/quotes", QuoteController
   end
 

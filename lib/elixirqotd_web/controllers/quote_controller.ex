@@ -5,19 +5,35 @@ defmodule ElixirqotdWeb.QuoteController do
   alias Elixirqotd.Core.Quote
 
   import Phoenix.Controller
+  import Enum
 
-  def randomQuote() do
+  def staticQuote() do
     static_author = "Anonymous"
     static_content = "Real Programmers do not eat Quiche"
     [quote: %{author: static_author, content: static_content}]
+  end
+
+  def dynamicQuote() do
+    quotes = Core.list_quotes()
+    size = length(quotes) - 1
+    random_number = :rand.uniform(size)
+    Enum.at(quotes, random_number)
   end
 
   def static(conn, _params) do
     html conn, "<h1>Real Programmers do not eat Quiche</h1>"
   end
 
+  def random(conn, _params) do
+    render(conn, "random.html", quote: dynamicQuote())
+  end
+
+  def randomAjax(conn, _params) do
+    render(put_layout(conn, false), "random.html", quote: dynamicQuote())
+  end
+
   def staticview(conn, _params) do
-    render conn, "static.html", randomQuote()
+    render conn, "static.html", staticQuote()
   end
 
   def index(conn, _params) do

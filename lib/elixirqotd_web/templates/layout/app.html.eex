@@ -14,7 +14,7 @@
   <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Quote of the day</a>
+      <a class="navbar-brand" href="/">Quote of the day</a>
 
     </nav>
 
@@ -23,6 +23,6 @@
     </main>
 
     <!-- /container -->
-    <script src='<%= static_path(@conn, "/js/app.js") %>'></script>
+    <script onload="app = require('js/app')" src='<%= static_path(@conn, "/js/app.js") %>'></script>
   </body>
 </html>
